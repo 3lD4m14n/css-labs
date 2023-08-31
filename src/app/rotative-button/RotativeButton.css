@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.button, .text {
+    border-radius: 20%;
+}
+
+.button {
+    background-color: white;
+    cursor: pointer;
+}
+
+.text {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    font-size: 40px;
+    font-style: bold;
+    position: relative;
+    background-color: white;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: background-color , color, transform .3s;
+}
+
+.button:hover .text {
+    transform: rotatex(360deg) translateX(10%) scale(.9);
+    background-color: black;
+    color: white;
+}
+
+.button:active .text {
+    transform: translateX(8%) scale(.9);
+    background-color: #ccc;
+    color: black;
+}   

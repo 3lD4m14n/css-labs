@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+/*3d cube rotation*/
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.animated {
+  animation: rotate 10s linear infinite;
+}
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front {
+  background: red;
+  transform: translateZ(100px);
+}
+
+.cube__face--back {
+  background: blue;
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube__face--right {
+  background: green;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube__face--left {
+  background: yellow;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube__face--top {
+  background: orange;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube__face--bottom {
+  background: purple;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/*arrow panel styles*/
+.arrow-panel {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.arrow-panel__arrow {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+} 
+
+.arrow-panel__arrow--up {
+  background: orange;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+} 
+
+.arrow-panel__arrow--down {
+  background: purple;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.arrow-panel__arrow--left {
+  background: yellow;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.arrow-panel__arrow--right {
+  background: green;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.arrow-panel__arrow--animate {
+  background: black;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
